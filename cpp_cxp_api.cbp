@@ -37,8 +37,8 @@
 		</Build>
 		<Compiler>
 			<Add option="-std=c++11" />
-			<Add directory="../../CppUtils/Utils/src" />
-			<Add directory="../include" />
+			<Add directory="../cpp_utils/Utils/src" />
+			<Add directory="../URemoteServer/include" />
 		</Compiler>
 		<Unit filename="src/exception/socket_exception.cpp" />
 		<Unit filename="src/exception/socket_exception.h" />
@@ -65,18 +65,9 @@
 		</Unit>
 		<Unit filename="src/windows/helpers/com_helper.cpp" />
 		<Unit filename="src/windows/helpers/com_helper.h" />
-		<Unit filename="src/windows/helpers/winsock_helper.cpp" />
 		<Unit filename="src/windows/helpers/winsock_helper.h" />
-		<Unit filename="src/windows/network_io_windows.cpp" />
-		<Unit filename="src/windows/network_io_windows.h" />
-		<Unit filename="src/windows/text_to_speech.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="src/windows/text_to_speech_windows.cpp" />
 		<Unit filename="src/windows/text_to_speech_windows.h" />
-		<Unit filename="src/windows/voice_recognition.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="src/windows/voice_recognition_windows.cpp" />
 		<Unit filename="src/windows/voice_recognition_windows.h" />
 		<Extensions>
