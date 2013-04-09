@@ -42,13 +42,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)include;..\CppUtils\Utils\src;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)include;..\cpp_utils\Utils\src;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)lib\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)include;..\CppUtils\Utils\src;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)include;..\cpp_utils\Utils\src;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)lib\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -121,7 +121,7 @@
     <ClInclude Include="src\network_io\tcp_connection.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CppUtils\Utils\Utils.vcxproj">
+    <ProjectReference Include="..\cpp_utils\Utils\Utils.vcxproj">
       <Project>{40a133af-dbe7-4533-b198-9597b336f630}</Project>
     </ProjectReference>
     <ProjectReference Include="C:\DevTools\protobuf-2.5.0\vsprojects\libprotobuf.vcxproj">
