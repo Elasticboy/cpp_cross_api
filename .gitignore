@@ -1,0 +1,14 @@
+Debug
+Release
+include
+lib
+ipch
+*.suo
+*.sdf
+*.opensdf
+*.user
+*.filters
+*.log
+*.layout
+.directory
+.objs

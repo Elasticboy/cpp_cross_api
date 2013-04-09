@@ -1,0 +1,93 @@
+﻿C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1395,5): warning : The referenced project '..\..\CppUtils\Utils\Utils.vcxproj' does not exist.
+  tcp_connection.cpp
+  tcp_server.cpp
+  vr_exception.cpp
+  tts_exception.cpp
+  text_to_speech_unix.cpp
+  voice_recognition_unix.cpp
+  voice_recognition_windows.cpp
+  text_to_speech_windows.cpp
+  com_helper.cpp
+  server_exchange.pb.cc
+c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility(2176): warning C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility(2157) : see declaration of 'std::_Copy_impl'
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(785) : see reference to function template instantiation '_OutIt std::copy<const Element[],Element[]>(_InIt,_InIt,_OutIt)' being compiled
+          with
+          [
+              _OutIt=google::protobuf::uint64 [],
+              Element=google::protobuf::uint64,
+              _InIt=const google::protobuf::uint64 []
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(784) : while compiling class template member function 'void google::protobuf::internal::ElementCopier<Element>::operator ()(Element [],const Element [],int)'
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(777) : see reference to function template instantiation 'void google::protobuf::internal::ElementCopier<Element>::operator ()(Element [],const Element [],int)' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(777) : see reference to class template instantiation 'google::protobuf::internal::ElementCopier<Element>' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(776) : while compiling class template member function 'void google::protobuf::RepeatedField<Element>::CopyArray(Element [],const Element [],int)'
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(771) : see reference to function template instantiation 'void google::protobuf::RepeatedField<Element>::CopyArray(Element [],const Element [],int)' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(770) : while compiling class template member function 'void google::protobuf::RepeatedField<Element>::MoveArray(Element [],Element [],int)'
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(757) : see reference to function template instantiation 'void google::protobuf::RepeatedField<Element>::MoveArray(Element [],Element [],int)' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(749) : while compiling class template member function 'void google::protobuf::RepeatedField<Element>::Reserve(int)'
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(631) : see reference to function template instantiation 'void google::protobuf::RepeatedField<Element>::Reserve(int)' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\repeated_field.h(590) : while compiling class template member function 'int google::protobuf::RepeatedField<Element>::size(void) const'
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\wire_format_lite_inl.h(270) : see reference to function template instantiation 'int google::protobuf::RepeatedField<Element>::size(void) const' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\wire_format_lite_inl.h(250) : see reference to class template instantiation 'google::protobuf::RepeatedField<Element>' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\devspaces\vsprojects\uremoteserver\include\google\protobuf\wire_format_lite_inl.h(303) : see reference to function template instantiation 'bool google::protobuf::internal::WireFormatLite::ReadRepeatedFixedSizePrimitive<google::protobuf::uint64,TYPE_FIXED64>(int,google::protobuf::uint32,google::protobuf::io::CodedInputStream *,google::protobuf::RepeatedField<Element> *)' being compiled
+          with
+          [
+              Element=google::protobuf::uint64
+          ]
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility(2157) : see declaration of 'std::_Copy_impl'
+  server_config.cpp
+  network_io.cpp
+  socket_exception.cpp
+  io_service_pool.cpp
+  serialized_message.cpp
+  Generating Code...
+  cpp_cxp_api.vcxproj -> C:\DevSpaces\VSProjects\URemoteServer\lib\Debug\cpp_cxp_api.lib
