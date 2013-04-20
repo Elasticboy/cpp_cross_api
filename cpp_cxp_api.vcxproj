@@ -43,13 +43,15 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
     <IncludePath>$(SolutionDir)include;..\cpp_utils\Utils\src;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)lib\$(Configuration);$(LibraryPath)</LibraryPath>
+    <LibraryPath>
+    </LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
     <IncludePath>$(SolutionDir)include;..\cpp_utils\Utils\src;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)lib\$(Configuration);$(LibraryPath)</LibraryPath>
+    <LibraryPath>
+    </LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
