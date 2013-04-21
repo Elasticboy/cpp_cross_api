@@ -6,6 +6,7 @@
 #include <iostream>
 #include <Windows.h>
 #include "Utils.h"
+#include "lexicon_manager.h"
 #include "string_utils.h"
 #include "helpers/com_helper.h"
 #include "exception/config_exception.h"
@@ -93,7 +94,7 @@ namespace text_to_speech
                 Utils::get_logger()->error("Speech::SayB - Unknown error.");
             }
 
-            hr = ispVoice->WaitUntilDone(30000);
+            hr = ispVoice->WaitUntilDone(INFINITE);
 
             ispVoice->Release();
             ispVoice = nullptr;
@@ -105,10 +106,12 @@ namespace text_to_speech
     const wchar_t* lang_to_attribute(std::string language)
     {
         // TODO: initialize Language in a map
-        // Default value : 409 = English
+        // Default value : 409 = English US
         const wchar_t* defaultValue = L"Language=409";
 
-        if (language == "FR") {
+		if (language == lexicon_manager::LANG_EN_UK) {
+            return L"Language=809";
+		} else if (language == lexicon_manager::LANG_FR) {
             return L"Language=40C";
         }
 
