@@ -24,7 +24,7 @@ namespace text_to_speech
     * @return True if parameters are correct, false othewise.
     * @throws and Exception if a problem occurs.
     */
-    bool test_parameters(const std::string& language, const std::string& gender)
+    bool test_parameters(const std::string& language, const std::string& gender, const long& rate)
     {
         // Init COM lib
 
@@ -35,7 +35,7 @@ namespace text_to_speech
         com_helper::check_result("Speech::testParameters", hr);
 
         try {
-            init_voice(ispVoice, language, gender);
+            init_voice(ispVoice, language, gender, rate);
             return true;
         } catch (const software_exception&) {
 
@@ -44,7 +44,7 @@ namespace text_to_speech
         return false;
     }
 
-    void init_voice(ISpVoice * ispVoice, const std::string& language, const std::string& gender)
+    void init_voice(ISpVoice * ispVoice, const std::string& language, const std::string& gender, const long& rate)
     {
         const wchar_t* reqAttributs = lang_to_attribute(language);
         const wchar_t* optAttributs = gender_to_attribute(gender);
@@ -56,10 +56,10 @@ namespace text_to_speech
 
         ispVoice->SetVoice(cpTokenEng);
         //TODO: Config Rate with file
-        ispVoice->SetRate(long(0.5));
+        ispVoice->SetRate(rate);
     }
 
-    bool say(const std::string& textToSpeak, const std::string& language, const std::string& gender)
+    bool say(const std::string& textToSpeak, const std::string& language, const std::string& gender, const long& rate)
     {
         // Init COM lib
         com_handler comHandler;
@@ -74,7 +74,7 @@ namespace text_to_speech
 
         if (SUCCEEDED( hr )) {
 
-            init_voice(ispVoice, language, gender);
+            init_voice(ispVoice, language, gender, rate);
 
             bstr_t bstrTextToSpeak(textToSpeak.c_str());
             hr = ispVoice->Speak(bstrTextToSpeak, SPF_ASYNC, nullptr);
