@@ -1,11 +1,26 @@
 #include "voice.h"
 
+#include <thread>
+#include "text_to_speech.h"
+#include "Utils.h"
 
 namespace text_to_speech {
 
 	voice::voice(const std::string& name, const language_code& language, const std::string& gender, const long& rate)
-	: name_(name), language_(language), gender_(gender), rate_(rate), is_mute_(false) { }
+		: name_(name), language_(language), gender_(gender), rate_(rate), is_mute_(false) { }
 
+	void voice::say_async(const std::string& textToSpeak)
+	{
+		std::thread speakThread(&voice::say, this, textToSpeak);
+		speakThread.join();
+	}
+
+	void voice::say(const std::string& textToSpeak)
+	{
+		if (text_to_speech::say(textToSpeak, language_, gender_, rate_)) {
+			Utils::get_logger()->info("Speech::say - " + textToSpeak);
+		}
+	}
 
 	std::string voice::name() const
 	{
@@ -21,7 +36,7 @@ namespace text_to_speech {
 	{
 		return language_;
 	}
-	
+
 	void voice::set_language(const language_code& language)
 	{
 		language_ = language;
@@ -51,7 +66,7 @@ namespace text_to_speech {
 	{
 		return rate_;
 	}
-	
+
 	void voice::set_rate(const long& rate)
 	{
 		rate_ = rate;

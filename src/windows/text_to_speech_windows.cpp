@@ -24,7 +24,7 @@ namespace text_to_speech
     * @return True if parameters are correct, false othewise.
     * @throws and Exception if a problem occurs.
     */
-    bool test_parameters(const std::string& language, const std::string& gender, const long& rate)
+    bool test_parameters(const language_code& language, const std::string& gender, const long& rate)
     {
         // Init COM lib
 
@@ -44,7 +44,7 @@ namespace text_to_speech
         return false;
     }
 
-    void init_voice(ISpVoice * ispVoice, const std::string& language, const std::string& gender, const long& rate)
+    void init_voice(ISpVoice * ispVoice, const language_code& language, const std::string& gender, const long& rate)
     {
         const wchar_t* reqAttributs = lang_to_attribute(language);
         const wchar_t* optAttributs = gender_to_attribute(gender);
@@ -55,11 +55,10 @@ namespace text_to_speech
         }
 
         ispVoice->SetVoice(cpTokenEng);
-        //TODO: Config Rate with file
         ispVoice->SetRate(rate);
     }
 
-    bool say(const std::string& textToSpeak, const std::string& language, const std::string& gender, const long& rate)
+    bool say(const std::string& textToSpeak, const language_code& language, const std::string& gender, const long& rate)
     {
         // Init COM lib
         com_handler comHandler;
@@ -103,15 +102,15 @@ namespace text_to_speech
         return result;
     }
 
-    const wchar_t* lang_to_attribute(std::string language)
+    const wchar_t* lang_to_attribute(const language_code& language)
     {
         // TODO: initialize Language in a map
         // Default value : 409 = English US
         const wchar_t* defaultValue = L"Language=409";
 
-		if (language == lexicon_manager::LANG_EN_UK) {
+		if (language == language_code::en_UK) {
             return L"Language=809";
-		} else if (language == lexicon_manager::LANG_FR) {
+		} else if (language == language_code::fr_FR) {
             return L"Language=40C";
         }
 
@@ -119,7 +118,7 @@ namespace text_to_speech
     }
 
     // TODO: initialize Gender in a map
-    const wchar_t* gender_to_attribute(std::string gender)
+    const wchar_t* gender_to_attribute(const std::string& gender)
     {
         const wchar_t* defaultValue = L"Gender=Female";
 

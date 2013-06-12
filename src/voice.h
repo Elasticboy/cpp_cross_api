@@ -10,6 +10,8 @@ namespace text_to_speech {
 	{
 	public:
 		voice(const std::string& name, const language_code& language, const std::string& gender, const long& rate = 0);
+		
+		void say_async(const std::string& textToSpeak);
 
 		std::string name() const;
 		language_code language() const;
@@ -29,6 +31,8 @@ namespace text_to_speech {
 		std::string gender_;
 		bool is_mute_;
 		long rate_;
+
+		void say(const std::string& textToSpeak);
 	};
 
 }

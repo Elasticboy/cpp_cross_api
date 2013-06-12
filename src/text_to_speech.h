@@ -7,6 +7,8 @@
 #	include "unix/text_to_speech_unix.h"
 # endif
 
+#include "voice.h"
+
 #include <string>
 #include <vector>
 
@@ -20,6 +22,6 @@ namespace text_to_speech {
 	const std::string default_lang = languague::EN;
 
 	std::vector<std::string> available_languages();
-	bool test_parameters(const std::string& language, const std::string& gender, const long& rate);
-	bool say(const std::string& textToSpeak, const std::string& language, const std::string& gender, const long& rate);
+	bool test_parameters(const language_code& language, const std::string& gender, const long& rate);
+	bool say(const std::string& textToSpeak, const language_code& language, const std::string& gender, const long& rate);
 }
