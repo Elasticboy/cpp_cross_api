@@ -19,7 +19,7 @@ void voice_recognition::recognizer::add_vocal_command()
 	// TODO: Implement recognizer::add_vocal_command()
 }
 
-void voice_recognition::recognizer::start_listening()
+void voice_recognition::recognizer::start_listening(const std::string& keyword)
 {
 	// Initialize COM library
 	com_handler initLibrary;
@@ -43,7 +43,7 @@ void voice_recognition::recognizer::start_listening()
 	com_helper::check_result("VoiceListener::listen", hr);
 
 	// TODO: Change static text to a parameter
-	ISpRecoGrammar* recoGrammar = init_grammar(recoContext, "PC");
+	ISpRecoGrammar* recoGrammar = init_grammar(recoContext, keyword);
 
 	/////////////////////////////////////////////////
 	// TODO: Review this

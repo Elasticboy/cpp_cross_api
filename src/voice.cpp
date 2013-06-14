@@ -8,18 +8,19 @@ namespace text_to_speech {
 
 	voice::voice(const std::string& name, const language_code& language, const std::string& gender, const long& rate)
 		: name_(name), language_(language), gender_(gender), rate_(rate), is_mute_(false) { }
-
+	
+	// TODO rename in voice::say ? 
 	void voice::say_async(const std::string& textToSpeak)
 	{
-		std::thread speakThread(&voice::say, this, textToSpeak);
+		//std::thread speakThread(&voice::say, this, textToSpeak);
+		std::thread speakThread(&text_to_speech::say, textToSpeak, language_, gender_, rate_);
 		speakThread.join();
 	}
 
+	// TODO Remove voice::say 
 	void voice::say(const std::string& textToSpeak)
 	{
-		if (text_to_speech::say(textToSpeak, language_, gender_, rate_)) {
-			Utils::get_logger()->info("Speech::say - " + textToSpeak);
-		}
+		text_to_speech::say(textToSpeak, language_, gender_, rate_);
 	}
 
 	std::string voice::name() const

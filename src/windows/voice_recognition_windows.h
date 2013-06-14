@@ -15,7 +15,7 @@ namespace voice_recognition
 		~recognizer();
 
 		void add_vocal_command();
-		void start_listening();
+		void start_listening(const std::string& keyword);
 
 	private:
 		std::string key_word_;

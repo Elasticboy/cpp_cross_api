@@ -16,9 +16,9 @@ void voice_recognition::recognizer::add_vocal_command()
 	// TODO: Implement recognizer::add_vocal_command()
 }
 
-void voice_recognition::recognizer::start_listening()
+void voice_recognition::recognizer::start_listening(const std::string& keyword)
 {
-	// TODO: Implement recognizer::start_listening()
+	// TODO: Implement recognizer::start_listening(const std::string& keyword)
 }
 
 #endif
