@@ -24,7 +24,7 @@ namespace text_to_speech
     * @return True if parameters are correct, false othewise.
     * @throws and Exception if a problem occurs.
     */
-    bool test_parameters(const language_code& language, const std::string& gender, const long& rate)
+    bool test_parameters(const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
         // Init COM lib
 
@@ -35,7 +35,7 @@ namespace text_to_speech
         com_helper::check_result("Speech::testParameters", hr);
 
         try {
-            init_voice(ispVoice, language, gender, rate);
+            init_voice(ispVoice, language, gender, age, rate);
             return true;
         } catch (const software_exception&) {
 
@@ -44,10 +44,11 @@ namespace text_to_speech
         return false;
     }
 
-    void init_voice(ISpVoice * ispVoice, const language_code& language, const std::string& gender, const long& rate)
+    void init_voice(ISpVoice * ispVoice, const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
-        const wchar_t* reqAttributs = lang_to_attribute(language);
-        const wchar_t* optAttributs = gender_to_attribute(gender);
+		const wchar_t* separator = L";";
+        const wchar_t* reqAttributs = lang_as_attribute(language);
+        const wchar_t* optAttributs = wcscat(wcscat(gender_as_attribute(gender), separator), age_as_attribute(age));
 
         ISpObjectToken* cpTokenEng;
         if (FAILED(::SpFindBestToken(SPCAT_VOICES, reqAttributs, optAttributs, &cpTokenEng))) {
@@ -58,7 +59,7 @@ namespace text_to_speech
         ispVoice->SetRate(rate);
     }
 
-    bool say(const std::string& textToSpeak, const language_code& language, const std::string& gender, const long& rate)
+    bool say(const std::string& textToSpeak, const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
         // Init COM lib
         com_handler comHandler;
@@ -73,7 +74,7 @@ namespace text_to_speech
 
         if (SUCCEEDED( hr )) {
 
-            init_voice(ispVoice, language, gender, rate);
+            init_voice(ispVoice, language, gender, age, rate);
 
             bstr_t bstrTextToSpeak(textToSpeak.c_str());
             hr = ispVoice->Speak(bstrTextToSpeak, SPF_ASYNC, nullptr);
@@ -102,7 +103,7 @@ namespace text_to_speech
         return result;
     }
 
-    const wchar_t* lang_to_attribute(const language_code& language)
+    const wchar_t* lang_as_attribute(const language_code& language)
     {
         // TODO: initialize Language in a map
         // Default value : 409 = English US
@@ -118,13 +119,30 @@ namespace text_to_speech
     }
 
     // TODO: initialize Gender in a map
-    const wchar_t* gender_to_attribute(const std::string& gender)
+    wchar_t* gender_as_attribute(const std::string& gender)
     {
-        const wchar_t* defaultValue = L"Gender=Female";
+        wchar_t* defaultValue = L"Gender=Female";
 
         if (gender == "M") {
             return L"Gender=Male";
         }
+
+        return defaultValue;
+    }
+	
+	wchar_t* age_as_attribute(const tts_age& age)
+    {
+        wchar_t* defaultValue = L"Age=Adult";
+
+		if (age == tts_age::Child) {
+            return L"Age=Child";
+
+        } else if (age == tts_age::Teen) {
+            return L"Age=Teen";
+
+        } else if (age == tts_age::Senior) {
+            return L"Age=Senior";
+		}
 
         return defaultValue;
     }
