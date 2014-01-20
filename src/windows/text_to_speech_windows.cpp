@@ -46,12 +46,12 @@ namespace text_to_speech
 
     void init_voice(ISpVoice * ispVoice, const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
-		const wchar_t* separator = L";";
-        const wchar_t* reqAttributs = lang_as_attribute(language);
-        const wchar_t* optAttributs = wcscat(wcscat(gender_as_attribute(gender), separator), age_as_attribute(age));
+		const std::wstring separator(";");
+        const std::wstring reqAttributs(lang_as_attribute(language));
+        const std::wstring optAttributs(std::wstring(gender_as_attribute(gender)) + separator + std::wstring(age_as_attribute(age));
 
         ISpObjectToken* cpTokenEng;
-        if (FAILED(::SpFindBestToken(SPCAT_VOICES, reqAttributs, optAttributs, &cpTokenEng))) {
+        if (FAILED(::SpFindBestToken(SPCAT_VOICES, reqAttributs.c_str(), optAttributs.c_str(), &cpTokenEng))) {
             throw software_exception("Speech::initVoice", "Couldn't find a Token with the required attributs.");
         }
 
@@ -103,6 +103,7 @@ namespace text_to_speech
         return result;
     }
 
+    // TODO: return std::wstring
     const wchar_t* lang_as_attribute(const language_code& language)
     {
         // TODO: initialize Language in a map
@@ -119,6 +120,7 @@ namespace text_to_speech
     }
 
     // TODO: initialize Gender in a map
+    // TODO: return std::wstring
     wchar_t* gender_as_attribute(const std::string& gender)
     {
         wchar_t* defaultValue = L"Gender=Female";
@@ -146,6 +148,5 @@ namespace text_to_speech
 
         return defaultValue;
     }
-
 }
 #endif
