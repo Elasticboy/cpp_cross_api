@@ -46,9 +46,13 @@ namespace text_to_speech
 
     void init_voice(ISpVoice * ispVoice, const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
-		const std::wstring separator(";");
+		const std::wstring separator(L";");
         const std::wstring reqAttributs(lang_as_attribute(language));
-        const std::wstring optAttributs(std::wstring(gender_as_attribute(gender)) + separator + std::wstring(age_as_attribute(age));
+
+        std::wstring optAttributs;
+		optAttributs.append(gender_as_attribute(gender));
+		optAttributs.append(separator);
+		optAttributs.append(age_as_attribute(age));
 
         ISpObjectToken* cpTokenEng;
         if (FAILED(::SpFindBestToken(SPCAT_VOICES, reqAttributs.c_str(), optAttributs.c_str(), &cpTokenEng))) {
@@ -103,11 +107,9 @@ namespace text_to_speech
         return result;
     }
 
-    // TODO: return std::wstring
-    const wchar_t* lang_as_attribute(const language_code& language)
+    const std::wstring lang_as_attribute(const language_code& language)
     {
         // TODO: initialize Language in a map
-        // Default value : 409 = English US
         const wchar_t* defaultValue = L"Language=409";
 
 		if (language == language_code::en_UK) {
@@ -116,26 +118,22 @@ namespace text_to_speech
             return L"Language=40C";
         }
 
-        return defaultValue;
+        // Default value : 409 = English US
+        return L"Language=409";
     }
 
-    // TODO: initialize Gender in a map
-    // TODO: return std::wstring
-    wchar_t* gender_as_attribute(const std::string& gender)
+    const std::wstring gender_as_attribute(const std::string& gender)
     {
-        wchar_t* defaultValue = L"Gender=Female";
-
+		// TODO: initialize Gender in a map
         if (gender == "M") {
             return L"Gender=Male";
         }
 
-        return defaultValue;
+        return L"defaultValue";
     }
 	
-	wchar_t* age_as_attribute(const tts_age& age)
+	const std::wstring age_as_attribute(const tts_age& age)
     {
-        wchar_t* defaultValue = L"Age=Adult";
-
 		if (age == tts_age::Child) {
             return L"Age=Child";
 
@@ -146,7 +144,7 @@ namespace text_to_speech
             return L"Age=Senior";
 		}
 
-        return defaultValue;
+        return L"Age=Adult";
     }
 }
 #endif
