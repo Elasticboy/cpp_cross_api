@@ -1,6 +1,6 @@
 #pragma once
 
-#include "server_exchange.pb.h"
+#include "message.pb.h"
 
 namespace network_io
 {
@@ -24,9 +24,8 @@ namespace network_io
 		const char* buffer_;
 	};
 
-	Request build_request(serialized_message message);
-	//Response build_response(serialized_message message);
-	//serialized_message serialize_request(Request request);
-	serialized_message serialize_response(Response response);
+	Request build_request(const serialized_message& message);
+	serialized_message serialize_response(const Response& response);
+	Response clear_response(Response& response, const std::string& message);
 
 }

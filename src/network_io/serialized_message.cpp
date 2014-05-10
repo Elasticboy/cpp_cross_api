@@ -5,7 +5,8 @@
 
 namespace network_io {
 
-	Request build_request(serialized_message message)
+	// Build the request from the serialized message.
+	Request build_request(const serialized_message& message)
 	{
 		Request request;
 		// Read varint delimited protobuf object in the buffer
@@ -22,7 +23,8 @@ namespace network_io {
 		return request;
 	}
 
-	serialized_message serialize_response(Response response)
+	// Serializes the response 
+	serialized_message serialize_response(const Response& response)
 	{
 		// Build a buffer that can hold message and room for a 32bit delimiter
 		auto bufSize	= response.ByteSize() + 4;
@@ -32,12 +34,26 @@ namespace network_io {
 		google::protobuf::io::ArrayOutputStream arrayOutputStream(buf, bufSize);
 		google::protobuf::io::CodedOutputStream codedOutputStream(&arrayOutputStream);
 		codedOutputStream.WriteVarint32(response.ByteSize());
-
+		
 		// Write response to the buffer
 		response.SerializeToCodedStream(&codedOutputStream);
 
 		serialized_message message(buf, bufSize);
 		return message;
+	}
+	
+	// Clears the response from potential errors before retrying serialization
+	Response clear_response(Response& response, const std::string& message)
+	{
+		response.set_returncode(Response_ReturnCode_RC_ERROR);
+		response.clear_message();
+		if (!message.empty()) {
+			response.set_message(message);
+		}
+		response.clear_intvalue();
+		response.clear_file();
+
+		return response;
 	}
 
 }
