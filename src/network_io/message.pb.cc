@@ -43,10 +43,9 @@ void protobuf_AssignDesc_message_2eproto() {
       "message.proto");
   GOOGLE_CHECK(file != NULL);
   Request_descriptor_ = file->message_type(0);
-  static const int Request_offsets_[6] = {
+  static const int Request_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, code_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, extracode_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, securitytoken_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, intextra_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, stringextra_),
@@ -142,72 +141,73 @@ void protobuf_AddDesc_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rmessage.proto\022\nnetwork_io\"\344\020\n\007Request\022"
+    "\n\rmessage.proto\022\nnetwork_io\"\375\020\n\007Request\022"
     "&\n\004type\030\001 \002(\0162\030.network_io.Request.Type\022"
     "&\n\004code\030\002 \002(\0162\030.network_io.Request.Code\022"
-    "+\n\textraCode\030\003 \002(\0162\030.network_io.Request."
-    "Code\022\025\n\rsecurityToken\030\004 \001(\t\022\020\n\010intExtra\030"
-    "\005 \001(\005\022\023\n\013stringExtra\030\006 \001(\t\"K\n\004Type\022\n\n\006SI"
-    "MPLE\020\000\022\014\n\010EXPLORER\020\001\022\014\n\010KEYBOARD\020\002\022\006\n\002AI"
-    "\020\003\022\n\n\006VOLUME\020\004\022\007\n\003APP\020\005\"\320\016\n\004Code\022\010\n\004NONE"
-    "\020\000\022\n\n\006DEFINE\020\001\022\n\n\006STATUS\020\002\022\006\n\002ON\020\003\022\007\n\003OF"
-    "F\020\004\022\010\n\004PING\020\005\022\010\n\004TEST\020\006\022\017\n\013KILL_SERVER\020\007"
-    "\022\014\n\010SHUTDOWN\020\010\022\021\n\rSWITCH_WINDOW\020\t\022\010\n\004LOC"
-    "K\020\n\022\010\n\004MUTE\020\013\022\007\n\003SAY\020\014\022\013\n\007DPAD_UP\020\r\022\r\n\tD"
-    "PAD_DOWN\020\016\022\r\n\tDPAD_LEFT\020\017\022\016\n\nDPAD_RIGHT\020"
-    "\020\022\024\n\020MEDIA_PLAY_PAUSE\020\024\022\016\n\nMEDIA_STOP\020\025\022"
-    "\022\n\016MEDIA_PREVIOUS\020\026\022\016\n\nMEDIA_NEXT\020\027\022\014\n\010M"
-    "EDIA_FF\020\030\022\020\n\014MEDIA_REWIND\020\031\022\017\n\013QUERY_ROO"
-    "TS\020\032\022\022\n\016QUERY_CHILDREN\020\033\022\024\n\020OPEN_SERVER_"
-    "SIDE\020\034\022\024\n\020OPEN_CLIENT_SIDE\020\035\022\020\n\014KEYCODE_"
-    "CTRL\020\036\022\021\n\rKEYCODE_SHIFT\020\037\022\024\n\020KEYCODE_ALT"
-    "_LEFT\020 \022\025\n\021KEYCODE_ALT_RIGHT\020!\022\023\n\017KEYCOD"
-    "E_WINDOWS\020\"\022\021\n\rKEYCODE_ENTER\020(\022\022\n\016KEYCOD"
-    "E_ESCAPE\020)\022\022\n\016KEYCODE_DELETE\020*\022\021\n\rKEYCOD"
-    "E_SPACE\020+\022\025\n\021KEYCODE_BACKSPACE\020,\022\017\n\013KEYC"
-    "ODE_TAB\020-\022\r\n\tKEYCODE_0\0202\022\r\n\tKEYCODE_1\0203\022"
-    "\r\n\tKEYCODE_2\0204\022\r\n\tKEYCODE_3\0205\022\r\n\tKEYCODE"
-    "_4\0206\022\r\n\tKEYCODE_5\0207\022\r\n\tKEYCODE_6\0208\022\r\n\tKE"
-    "YCODE_7\0209\022\r\n\tKEYCODE_8\020:\022\r\n\tKEYCODE_9\020;\022"
-    "\r\n\tKEYCODE_A\020<\022\r\n\tKEYCODE_B\020=\022\r\n\tKEYCODE"
-    "_C\020>\022\r\n\tKEYCODE_D\020\?\022\r\n\tKEYCODE_E\020@\022\r\n\tKE"
-    "YCODE_F\020A\022\r\n\tKEYCODE_G\020B\022\r\n\tKEYCODE_H\020C\022"
-    "\r\n\tKEYCODE_I\020D\022\r\n\tKEYCODE_J\020E\022\r\n\tKEYCODE"
-    "_K\020F\022\r\n\tKEYCODE_L\020G\022\r\n\tKEYCODE_M\020H\022\r\n\tKE"
-    "YCODE_N\020I\022\r\n\tKEYCODE_O\020J\022\r\n\tKEYCODE_P\020K\022"
-    "\r\n\tKEYCODE_Q\020L\022\r\n\tKEYCODE_R\020M\022\r\n\tKEYCODE"
-    "_S\020N\022\r\n\tKEYCODE_T\020O\022\r\n\tKEYCODE_U\020P\022\r\n\tKE"
-    "YCODE_V\020Q\022\r\n\tKEYCODE_W\020R\022\r\n\tKEYCODE_X\020S\022"
-    "\r\n\tKEYCODE_Y\020T\022\r\n\tKEYCODE_Z\020U\022\016\n\nKEYCODE"
-    "_F1\020V\022\016\n\nKEYCODE_F2\020W\022\016\n\nKEYCODE_F3\020X\022\016\n"
-    "\nKEYCODE_F4\020Y\022\016\n\nKEYCODE_F5\020Z\022\016\n\nKEYCODE"
-    "_F6\020[\022\016\n\nKEYCODE_F7\020\\\022\016\n\nKEYCODE_F8\020]\022\016\n"
-    "\nKEYCODE_F9\020^\022\017\n\013KEYCODE_F10\020_\022\017\n\013KEYCOD"
-    "E_F11\020`\022\017\n\013KEYCODE_F12\020a\022\022\n\016KEYCODE_EQUA"
-    "LS\020d\022\021\n\rKEYCODE_MINUS\020e\022\020\n\014KEYCODE_PLUS\020"
-    "f\022\020\n\014KEYCODE_STAR\020g\022\021\n\rKEYCODE_SLASH\020h\022\025"
-    "\n\021KEYCODE_BACKSLASH\020i\022\026\n\022KEYCODE_UNDERSC"
-    "ORE\020j\022\020\n\014KEYCODE_PIPE\020k\022\021\n\rKEYCODE_COMMA"
-    "\020l\022\023\n\017KEYCODE_PERIODE\020m\022\021\n\rKEYCODE_COLON"
-    "\020n\022\025\n\021KEYCODE_SEMICOLON\020o\022\016\n\nKEYCODE_AT\020"
-    "p\022\026\n\022KEYCODE_APOSTROPHE\020q\022\026\n\022KEYCODE_LEF"
-    "T_PAREN\020x\022\030\n\024KEYCODE_RIGHT_PARENT\020y\022\030\n\024K"
-    "EYCODE_LEFT_BRACKET\020z\022\031\n\025KEYCODE_RIGHT_B"
-    "RACKET\020{\022\036\n\032KEYCODE_LEFT_CURLY_BRACKET\020|"
-    "\022\037\n\033KEYCODE_RIGHT_CURLY_BRACKET\020}\022\036\n\032KEY"
-    "CODE_LEFT_ANGLE_BRACKET\020~\022\037\n\033KEYCODE_RIG"
-    "HT_ANGLE_BRACKET\020\177\"~\n\010FileInfo\022\030\n\020absolu"
-    "teFilePath\030\001 \002(\t\022\020\n\010filename\030\002 \002(\t\022\023\n\013is"
-    "Directory\030\003 \002(\010\022\014\n\004size\030\004 \002(\005\022#\n\005child\030\005"
-    " \003(\0132\024.network_io.FileInfo\"\232\002\n\010Response\022"
-    "-\n\013requestType\030\001 \002(\0162\030.network_io.Reques"
-    "t.Type\022-\n\013requestCode\030\002 \002(\0162\030.network_io"
-    ".Request.Code\022=\n\nreturnCode\030\003 \002(\0162\037.netw"
-    "ork_io.Response.ReturnCode:\010RC_ERROR\022\017\n\007"
-    "message\030\004 \002(\t\022\020\n\010intValue\030\005 \001(\005\022\"\n\004file\030"
-    "\006 \001(\0132\024.network_io.FileInfo\"*\n\nReturnCod"
-    "e\022\016\n\nRC_SUCCESS\020\000\022\014\n\010RC_ERROR\020\001B\"\n\027org.e"
-    "s.uremote.exchangeB\007Message", 2627);
+    "\025\n\rsecurityToken\030\003 \001(\t\022\020\n\010intExtra\030\004 \001(\005"
+    "\022\023\n\013stringExtra\030\005 \001(\t\"K\n\004Type\022\n\n\006SIMPLE\020"
+    "\000\022\014\n\010EXPLORER\020\001\022\014\n\010KEYBOARD\020\002\022\006\n\002AI\020\003\022\n\n"
+    "\006VOLUME\020\004\022\007\n\003APP\020\005\"\226\017\n\004Code\022\010\n\004NONE\020\000\022\n\n"
+    "\006DEFINE\020\001\022\n\n\006STATUS\020\002\022\006\n\002ON\020\003\022\007\n\003OFF\020\004\022\010"
+    "\n\004PING\020\005\022\010\n\004TEST\020\006\022\017\n\013KILL_SERVER\020\007\022\014\n\010S"
+    "HUTDOWN\020\010\022\021\n\rSWITCH_WINDOW\020\t\022\010\n\004LOCK\020\n\022\010"
+    "\n\004MUTE\020\013\022\007\n\003SAY\020\014\022\013\n\007DPAD_UP\020\r\022\r\n\tDPAD_D"
+    "OWN\020\016\022\r\n\tDPAD_LEFT\020\017\022\016\n\nDPAD_RIGHT\020\020\022\024\n\020"
+    "MEDIA_PLAY_PAUSE\020\024\022\016\n\nMEDIA_STOP\020\025\022\022\n\016ME"
+    "DIA_PREVIOUS\020\026\022\016\n\nMEDIA_NEXT\020\027\022\014\n\010MEDIA_"
+    "FF\020\030\022\020\n\014MEDIA_REWIND\020\031\022\017\n\013QUERY_ROOTS\020\032\022"
+    "\022\n\016QUERY_CHILDREN\020\033\022\024\n\020OPEN_SERVER_SIDE\020"
+    "\034\022\024\n\020OPEN_CLIENT_SIDE\020\035\022\016\n\tKEYCODE_0\020\364\003\022"
+    "\016\n\tKEYCODE_1\020\365\003\022\016\n\tKEYCODE_2\020\366\003\022\016\n\tKEYCO"
+    "DE_3\020\367\003\022\016\n\tKEYCODE_4\020\370\003\022\016\n\tKEYCODE_5\020\371\003\022"
+    "\016\n\tKEYCODE_6\020\372\003\022\016\n\tKEYCODE_7\020\373\003\022\016\n\tKEYCO"
+    "DE_8\020\374\003\022\016\n\tKEYCODE_9\020\375\003\022\016\n\tKEYCODE_A\020\376\003\022"
+    "\016\n\tKEYCODE_B\020\377\003\022\016\n\tKEYCODE_C\020\200\004\022\016\n\tKEYCO"
+    "DE_D\020\201\004\022\016\n\tKEYCODE_E\020\202\004\022\016\n\tKEYCODE_F\020\203\004\022"
+    "\016\n\tKEYCODE_G\020\204\004\022\016\n\tKEYCODE_H\020\205\004\022\016\n\tKEYCO"
+    "DE_I\020\206\004\022\016\n\tKEYCODE_J\020\207\004\022\016\n\tKEYCODE_K\020\210\004\022"
+    "\016\n\tKEYCODE_L\020\211\004\022\016\n\tKEYCODE_M\020\212\004\022\016\n\tKEYCO"
+    "DE_N\020\213\004\022\016\n\tKEYCODE_O\020\214\004\022\016\n\tKEYCODE_P\020\215\004\022"
+    "\016\n\tKEYCODE_Q\020\216\004\022\016\n\tKEYCODE_R\020\217\004\022\016\n\tKEYCO"
+    "DE_S\020\220\004\022\016\n\tKEYCODE_T\020\221\004\022\016\n\tKEYCODE_U\020\222\004\022"
+    "\016\n\tKEYCODE_V\020\223\004\022\016\n\tKEYCODE_W\020\224\004\022\016\n\tKEYCO"
+    "DE_X\020\225\004\022\016\n\tKEYCODE_Y\020\226\004\022\016\n\tKEYCODE_Z\020\227\004\022"
+    "\017\n\nKEYCODE_F1\020\246\004\022\017\n\nKEYCODE_F2\020\247\004\022\017\n\nKEY"
+    "CODE_F3\020\250\004\022\017\n\nKEYCODE_F4\020\251\004\022\017\n\nKEYCODE_F"
+    "5\020\252\004\022\017\n\nKEYCODE_F6\020\253\004\022\017\n\nKEYCODE_F7\020\254\004\022\017"
+    "\n\nKEYCODE_F8\020\255\004\022\017\n\nKEYCODE_F9\020\256\004\022\020\n\013KEYC"
+    "ODE_F10\020\257\004\022\020\n\013KEYCODE_F11\020\260\004\022\020\n\013KEYCODE_"
+    "F12\020\261\004\022\020\n\014KEYCODE_CTRL\020\036\022\021\n\rKEYCODE_SHIF"
+    "T\020\037\022\024\n\020KEYCODE_ALT_LEFT\020 \022\025\n\021KEYCODE_ALT"
+    "_RIGHT\020!\022\023\n\017KEYCODE_WINDOWS\020\"\022\021\n\rKEYCODE"
+    "_ENTER\020(\022\022\n\016KEYCODE_ESCAPE\020)\022\022\n\016KEYCODE_"
+    "DELETE\020*\022\021\n\rKEYCODE_SPACE\020+\022\025\n\021KEYCODE_B"
+    "ACKSPACE\020,\022\017\n\013KEYCODE_TAB\020-\022\023\n\016KEYCODE_E"
+    "QUALS\020\330\004\022\022\n\rKEYCODE_MINUS\020\331\004\022\021\n\014KEYCODE_"
+    "PLUS\020\332\004\022\021\n\014KEYCODE_STAR\020\333\004\022\022\n\rKEYCODE_SL"
+    "ASH\020\334\004\022\026\n\021KEYCODE_BACKSLASH\020\335\004\022\027\n\022KEYCOD"
+    "E_UNDERSCORE\020\336\004\022\021\n\014KEYCODE_PIPE\020\337\004\022\022\n\rKE"
+    "YCODE_COMMA\020\340\004\022\024\n\017KEYCODE_PERIODE\020\341\004\022\022\n\r"
+    "KEYCODE_COLON\020\342\004\022\026\n\021KEYCODE_SEMICOLON\020\343\004"
+    "\022\017\n\nKEYCODE_AT\020\344\004\022\027\n\022KEYCODE_APOSTROPHE\020"
+    "\345\004\022\027\n\022KEYCODE_LEFT_PAREN\020\212\005\022\031\n\024KEYCODE_R"
+    "IGHT_PARENT\020\213\005\022\031\n\024KEYCODE_LEFT_BRACKET\020\214"
+    "\005\022\032\n\025KEYCODE_RIGHT_BRACKET\020\215\005\022\037\n\032KEYCODE"
+    "_LEFT_CURLY_BRACKET\020\216\005\022 \n\033KEYCODE_RIGHT_"
+    "CURLY_BRACKET\020\217\005\022\037\n\032KEYCODE_LEFT_ANGLE_B"
+    "RACKET\020\220\005\022 \n\033KEYCODE_RIGHT_ANGLE_BRACKET"
+    "\020\221\005\"~\n\010FileInfo\022\030\n\020absoluteFilePath\030\001 \002("
+    "\t\022\020\n\010filename\030\002 \002(\t\022\023\n\013isDirectory\030\003 \002(\010"
+    "\022\014\n\004size\030\004 \002(\r\022#\n\005child\030\005 \003(\0132\024.network_"
+    "io.FileInfo\"\232\002\n\010Response\022-\n\013requestType\030"
+    "\001 \002(\0162\030.network_io.Request.Type\022-\n\013reque"
+    "stCode\030\002 \002(\0162\030.network_io.Request.Code\022="
+    "\n\nreturnCode\030\003 \002(\0162\037.network_io.Response"
+    ".ReturnCode:\010RC_ERROR\022\017\n\007message\030\004 \002(\t\022\020"
+    "\n\010intValue\030\005 \001(\005\022\"\n\004file\030\006 \001(\0132\024.network"
+    "_io.FileInfo\"*\n\nReturnCode\022\016\n\nRC_SUCCESS"
+    "\020\000\022\014\n\010RC_ERROR\020\001B\"\n\027org.es.uremote.excha"
+    "ngeB\007Message", 2652);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   Request::default_instance_ = new Request();
@@ -301,76 +301,76 @@ bool Request_Code_IsValid(int value) {
     case 43:
     case 44:
     case 45:
-    case 50:
-    case 51:
-    case 52:
-    case 53:
-    case 54:
-    case 55:
-    case 56:
-    case 57:
-    case 58:
-    case 59:
-    case 60:
-    case 61:
-    case 62:
-    case 63:
-    case 64:
-    case 65:
-    case 66:
-    case 67:
-    case 68:
-    case 69:
-    case 70:
-    case 71:
-    case 72:
-    case 73:
-    case 74:
-    case 75:
-    case 76:
-    case 77:
-    case 78:
-    case 79:
-    case 80:
-    case 81:
-    case 82:
-    case 83:
-    case 84:
-    case 85:
-    case 86:
-    case 87:
-    case 88:
-    case 89:
-    case 90:
-    case 91:
-    case 92:
-    case 93:
-    case 94:
-    case 95:
-    case 96:
-    case 97:
-    case 100:
-    case 101:
-    case 102:
-    case 103:
-    case 104:
-    case 105:
-    case 106:
-    case 107:
-    case 108:
-    case 109:
-    case 110:
-    case 111:
-    case 112:
-    case 113:
-    case 120:
-    case 121:
-    case 122:
-    case 123:
-    case 124:
-    case 125:
-    case 126:
-    case 127:
+    case 500:
+    case 501:
+    case 502:
+    case 503:
+    case 504:
+    case 505:
+    case 506:
+    case 507:
+    case 508:
+    case 509:
+    case 510:
+    case 511:
+    case 512:
+    case 513:
+    case 514:
+    case 515:
+    case 516:
+    case 517:
+    case 518:
+    case 519:
+    case 520:
+    case 521:
+    case 522:
+    case 523:
+    case 524:
+    case 525:
+    case 526:
+    case 527:
+    case 528:
+    case 529:
+    case 530:
+    case 531:
+    case 532:
+    case 533:
+    case 534:
+    case 535:
+    case 550:
+    case 551:
+    case 552:
+    case 553:
+    case 554:
+    case 555:
+    case 556:
+    case 557:
+    case 558:
+    case 559:
+    case 560:
+    case 561:
+    case 600:
+    case 601:
+    case 602:
+    case 603:
+    case 604:
+    case 605:
+    case 606:
+    case 607:
+    case 608:
+    case 609:
+    case 610:
+    case 611:
+    case 612:
+    case 613:
+    case 650:
+    case 651:
+    case 652:
+    case 653:
+    case 654:
+    case 655:
+    case 656:
+    case 657:
       return true;
     default:
       return false;
@@ -405,17 +405,6 @@ const Request_Code Request::QUERY_ROOTS;
 const Request_Code Request::QUERY_CHILDREN;
 const Request_Code Request::OPEN_SERVER_SIDE;
 const Request_Code Request::OPEN_CLIENT_SIDE;
-const Request_Code Request::KEYCODE_CTRL;
-const Request_Code Request::KEYCODE_SHIFT;
-const Request_Code Request::KEYCODE_ALT_LEFT;
-const Request_Code Request::KEYCODE_ALT_RIGHT;
-const Request_Code Request::KEYCODE_WINDOWS;
-const Request_Code Request::KEYCODE_ENTER;
-const Request_Code Request::KEYCODE_ESCAPE;
-const Request_Code Request::KEYCODE_DELETE;
-const Request_Code Request::KEYCODE_SPACE;
-const Request_Code Request::KEYCODE_BACKSPACE;
-const Request_Code Request::KEYCODE_TAB;
 const Request_Code Request::KEYCODE_0;
 const Request_Code Request::KEYCODE_1;
 const Request_Code Request::KEYCODE_2;
@@ -464,6 +453,17 @@ const Request_Code Request::KEYCODE_F9;
 const Request_Code Request::KEYCODE_F10;
 const Request_Code Request::KEYCODE_F11;
 const Request_Code Request::KEYCODE_F12;
+const Request_Code Request::KEYCODE_CTRL;
+const Request_Code Request::KEYCODE_SHIFT;
+const Request_Code Request::KEYCODE_ALT_LEFT;
+const Request_Code Request::KEYCODE_ALT_RIGHT;
+const Request_Code Request::KEYCODE_WINDOWS;
+const Request_Code Request::KEYCODE_ENTER;
+const Request_Code Request::KEYCODE_ESCAPE;
+const Request_Code Request::KEYCODE_DELETE;
+const Request_Code Request::KEYCODE_SPACE;
+const Request_Code Request::KEYCODE_BACKSPACE;
+const Request_Code Request::KEYCODE_TAB;
 const Request_Code Request::KEYCODE_EQUALS;
 const Request_Code Request::KEYCODE_MINUS;
 const Request_Code Request::KEYCODE_PLUS;
@@ -493,7 +493,6 @@ const int Request::Code_ARRAYSIZE;
 #ifndef _MSC_VER
 const int Request::kTypeFieldNumber;
 const int Request::kCodeFieldNumber;
-const int Request::kExtraCodeFieldNumber;
 const int Request::kSecurityTokenFieldNumber;
 const int Request::kIntExtraFieldNumber;
 const int Request::kStringExtraFieldNumber;
@@ -517,7 +516,6 @@ void Request::SharedCtor() {
   _cached_size_ = 0;
   type_ = 0;
   code_ = 0;
-  extracode_ = 0;
   securitytoken_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   intextra_ = 0;
   stringextra_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
@@ -564,7 +562,6 @@ void Request::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     type_ = 0;
     code_ = 0;
-    extracode_ = 0;
     if (has_securitytoken()) {
       if (securitytoken_ != &::google::protobuf::internal::kEmptyString) {
         securitytoken_->clear();
@@ -624,33 +621,12 @@ bool Request::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(24)) goto parse_extraCode;
+        if (input->ExpectTag(26)) goto parse_securityToken;
         break;
       }
 
-      // required .network_io.Request.Code extraCode = 3;
+      // optional string securityToken = 3;
       case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_extraCode:
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::network_io::Request_Code_IsValid(value)) {
-            set_extracode(static_cast< ::network_io::Request_Code >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(3, value);
-          }
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(34)) goto parse_securityToken;
-        break;
-      }
-
-      // optional string securityToken = 4;
-      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_securityToken:
@@ -662,12 +638,12 @@ bool Request::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(40)) goto parse_intExtra;
+        if (input->ExpectTag(32)) goto parse_intExtra;
         break;
       }
 
-      // optional int32 intExtra = 5;
-      case 5: {
+      // optional int32 intExtra = 4;
+      case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_intExtra:
@@ -678,12 +654,12 @@ bool Request::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_stringExtra;
+        if (input->ExpectTag(42)) goto parse_stringExtra;
         break;
       }
 
-      // optional string stringExtra = 6;
-      case 6: {
+      // optional string stringExtra = 5;
+      case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_stringExtra:
@@ -729,33 +705,27 @@ void Request::SerializeWithCachedSizes(
       2, this->code(), output);
   }
 
-  // required .network_io.Request.Code extraCode = 3;
-  if (has_extracode()) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      3, this->extracode(), output);
-  }
-
-  // optional string securityToken = 4;
+  // optional string securityToken = 3;
   if (has_securitytoken()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->securitytoken().data(), this->securitytoken().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      4, this->securitytoken(), output);
+      3, this->securitytoken(), output);
   }
 
-  // optional int32 intExtra = 5;
+  // optional int32 intExtra = 4;
   if (has_intextra()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->intextra(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->intextra(), output);
   }
 
-  // optional string stringExtra = 6;
+  // optional string stringExtra = 5;
   if (has_stringextra()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->stringextra().data(), this->stringextra().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      6, this->stringextra(), output);
+      5, this->stringextra(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -778,35 +748,29 @@ void Request::SerializeWithCachedSizes(
       2, this->code(), target);
   }
 
-  // required .network_io.Request.Code extraCode = 3;
-  if (has_extracode()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      3, this->extracode(), target);
-  }
-
-  // optional string securityToken = 4;
+  // optional string securityToken = 3;
   if (has_securitytoken()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->securitytoken().data(), this->securitytoken().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->securitytoken(), target);
+        3, this->securitytoken(), target);
   }
 
-  // optional int32 intExtra = 5;
+  // optional int32 intExtra = 4;
   if (has_intextra()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->intextra(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->intextra(), target);
   }
 
-  // optional string stringExtra = 6;
+  // optional string stringExtra = 5;
   if (has_stringextra()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->stringextra().data(), this->stringextra().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        6, this->stringextra(), target);
+        5, this->stringextra(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -832,27 +796,21 @@ int Request::ByteSize() const {
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->code());
     }
 
-    // required .network_io.Request.Code extraCode = 3;
-    if (has_extracode()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->extracode());
-    }
-
-    // optional string securityToken = 4;
+    // optional string securityToken = 3;
     if (has_securitytoken()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->securitytoken());
     }
 
-    // optional int32 intExtra = 5;
+    // optional int32 intExtra = 4;
     if (has_intextra()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->intextra());
     }
 
-    // optional string stringExtra = 6;
+    // optional string stringExtra = 5;
     if (has_stringextra()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -892,9 +850,6 @@ void Request::MergeFrom(const Request& from) {
     if (from.has_code()) {
       set_code(from.code());
     }
-    if (from.has_extracode()) {
-      set_extracode(from.extracode());
-    }
     if (from.has_securitytoken()) {
       set_securitytoken(from.securitytoken());
     }
@@ -921,7 +876,7 @@ void Request::CopyFrom(const Request& from) {
 }
 
 bool Request::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   return true;
 }
@@ -930,7 +885,6 @@ void Request::Swap(Request* other) {
   if (other != this) {
     std::swap(type_, other->type_);
     std::swap(code_, other->code_);
-    std::swap(extracode_, other->extracode_);
     std::swap(securitytoken_, other->securitytoken_);
     std::swap(intextra_, other->intextra_);
     std::swap(stringextra_, other->stringextra_);
@@ -978,7 +932,7 @@ void FileInfo::SharedCtor() {
   absolutefilepath_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   isdirectory_ = false;
-  size_ = 0;
+  size_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1031,7 +985,7 @@ void FileInfo::Clear() {
       }
     }
     isdirectory_ = false;
-    size_ = 0;
+    size_ = 0u;
   }
   child_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1093,13 +1047,13 @@ bool FileInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 size = 4;
+      // required uint32 size = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_size:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &size_)));
           set_has_size();
         } else {
@@ -1165,9 +1119,9 @@ void FileInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->isdirectory(), output);
   }
 
-  // required int32 size = 4;
+  // required uint32 size = 4;
   if (has_size()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->size(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->size(), output);
   }
 
   // repeated .network_io.FileInfo child = 5;
@@ -1209,9 +1163,9 @@ void FileInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->isdirectory(), target);
   }
 
-  // required int32 size = 4;
+  // required uint32 size = 4;
   if (has_size()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->size(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->size(), target);
   }
 
   // repeated .network_io.FileInfo child = 5;
@@ -1251,10 +1205,10 @@ int FileInfo::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // required int32 size = 4;
+    // required uint32 size = 4;
     if (has_size()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->size());
     }
 

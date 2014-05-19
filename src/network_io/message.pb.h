@@ -89,6 +89,54 @@ enum Request_Code {
   Request_Code_QUERY_CHILDREN = 27,
   Request_Code_OPEN_SERVER_SIDE = 28,
   Request_Code_OPEN_CLIENT_SIDE = 29,
+  Request_Code_KEYCODE_0 = 500,
+  Request_Code_KEYCODE_1 = 501,
+  Request_Code_KEYCODE_2 = 502,
+  Request_Code_KEYCODE_3 = 503,
+  Request_Code_KEYCODE_4 = 504,
+  Request_Code_KEYCODE_5 = 505,
+  Request_Code_KEYCODE_6 = 506,
+  Request_Code_KEYCODE_7 = 507,
+  Request_Code_KEYCODE_8 = 508,
+  Request_Code_KEYCODE_9 = 509,
+  Request_Code_KEYCODE_A = 510,
+  Request_Code_KEYCODE_B = 511,
+  Request_Code_KEYCODE_C = 512,
+  Request_Code_KEYCODE_D = 513,
+  Request_Code_KEYCODE_E = 514,
+  Request_Code_KEYCODE_F = 515,
+  Request_Code_KEYCODE_G = 516,
+  Request_Code_KEYCODE_H = 517,
+  Request_Code_KEYCODE_I = 518,
+  Request_Code_KEYCODE_J = 519,
+  Request_Code_KEYCODE_K = 520,
+  Request_Code_KEYCODE_L = 521,
+  Request_Code_KEYCODE_M = 522,
+  Request_Code_KEYCODE_N = 523,
+  Request_Code_KEYCODE_O = 524,
+  Request_Code_KEYCODE_P = 525,
+  Request_Code_KEYCODE_Q = 526,
+  Request_Code_KEYCODE_R = 527,
+  Request_Code_KEYCODE_S = 528,
+  Request_Code_KEYCODE_T = 529,
+  Request_Code_KEYCODE_U = 530,
+  Request_Code_KEYCODE_V = 531,
+  Request_Code_KEYCODE_W = 532,
+  Request_Code_KEYCODE_X = 533,
+  Request_Code_KEYCODE_Y = 534,
+  Request_Code_KEYCODE_Z = 535,
+  Request_Code_KEYCODE_F1 = 550,
+  Request_Code_KEYCODE_F2 = 551,
+  Request_Code_KEYCODE_F3 = 552,
+  Request_Code_KEYCODE_F4 = 553,
+  Request_Code_KEYCODE_F5 = 554,
+  Request_Code_KEYCODE_F6 = 555,
+  Request_Code_KEYCODE_F7 = 556,
+  Request_Code_KEYCODE_F8 = 557,
+  Request_Code_KEYCODE_F9 = 558,
+  Request_Code_KEYCODE_F10 = 559,
+  Request_Code_KEYCODE_F11 = 560,
+  Request_Code_KEYCODE_F12 = 561,
   Request_Code_KEYCODE_CTRL = 30,
   Request_Code_KEYCODE_SHIFT = 31,
   Request_Code_KEYCODE_ALT_LEFT = 32,
@@ -100,76 +148,28 @@ enum Request_Code {
   Request_Code_KEYCODE_SPACE = 43,
   Request_Code_KEYCODE_BACKSPACE = 44,
   Request_Code_KEYCODE_TAB = 45,
-  Request_Code_KEYCODE_0 = 50,
-  Request_Code_KEYCODE_1 = 51,
-  Request_Code_KEYCODE_2 = 52,
-  Request_Code_KEYCODE_3 = 53,
-  Request_Code_KEYCODE_4 = 54,
-  Request_Code_KEYCODE_5 = 55,
-  Request_Code_KEYCODE_6 = 56,
-  Request_Code_KEYCODE_7 = 57,
-  Request_Code_KEYCODE_8 = 58,
-  Request_Code_KEYCODE_9 = 59,
-  Request_Code_KEYCODE_A = 60,
-  Request_Code_KEYCODE_B = 61,
-  Request_Code_KEYCODE_C = 62,
-  Request_Code_KEYCODE_D = 63,
-  Request_Code_KEYCODE_E = 64,
-  Request_Code_KEYCODE_F = 65,
-  Request_Code_KEYCODE_G = 66,
-  Request_Code_KEYCODE_H = 67,
-  Request_Code_KEYCODE_I = 68,
-  Request_Code_KEYCODE_J = 69,
-  Request_Code_KEYCODE_K = 70,
-  Request_Code_KEYCODE_L = 71,
-  Request_Code_KEYCODE_M = 72,
-  Request_Code_KEYCODE_N = 73,
-  Request_Code_KEYCODE_O = 74,
-  Request_Code_KEYCODE_P = 75,
-  Request_Code_KEYCODE_Q = 76,
-  Request_Code_KEYCODE_R = 77,
-  Request_Code_KEYCODE_S = 78,
-  Request_Code_KEYCODE_T = 79,
-  Request_Code_KEYCODE_U = 80,
-  Request_Code_KEYCODE_V = 81,
-  Request_Code_KEYCODE_W = 82,
-  Request_Code_KEYCODE_X = 83,
-  Request_Code_KEYCODE_Y = 84,
-  Request_Code_KEYCODE_Z = 85,
-  Request_Code_KEYCODE_F1 = 86,
-  Request_Code_KEYCODE_F2 = 87,
-  Request_Code_KEYCODE_F3 = 88,
-  Request_Code_KEYCODE_F4 = 89,
-  Request_Code_KEYCODE_F5 = 90,
-  Request_Code_KEYCODE_F6 = 91,
-  Request_Code_KEYCODE_F7 = 92,
-  Request_Code_KEYCODE_F8 = 93,
-  Request_Code_KEYCODE_F9 = 94,
-  Request_Code_KEYCODE_F10 = 95,
-  Request_Code_KEYCODE_F11 = 96,
-  Request_Code_KEYCODE_F12 = 97,
-  Request_Code_KEYCODE_EQUALS = 100,
-  Request_Code_KEYCODE_MINUS = 101,
-  Request_Code_KEYCODE_PLUS = 102,
-  Request_Code_KEYCODE_STAR = 103,
-  Request_Code_KEYCODE_SLASH = 104,
-  Request_Code_KEYCODE_BACKSLASH = 105,
-  Request_Code_KEYCODE_UNDERSCORE = 106,
-  Request_Code_KEYCODE_PIPE = 107,
-  Request_Code_KEYCODE_COMMA = 108,
-  Request_Code_KEYCODE_PERIODE = 109,
-  Request_Code_KEYCODE_COLON = 110,
-  Request_Code_KEYCODE_SEMICOLON = 111,
-  Request_Code_KEYCODE_AT = 112,
-  Request_Code_KEYCODE_APOSTROPHE = 113,
-  Request_Code_KEYCODE_LEFT_PAREN = 120,
-  Request_Code_KEYCODE_RIGHT_PARENT = 121,
-  Request_Code_KEYCODE_LEFT_BRACKET = 122,
-  Request_Code_KEYCODE_RIGHT_BRACKET = 123,
-  Request_Code_KEYCODE_LEFT_CURLY_BRACKET = 124,
-  Request_Code_KEYCODE_RIGHT_CURLY_BRACKET = 125,
-  Request_Code_KEYCODE_LEFT_ANGLE_BRACKET = 126,
-  Request_Code_KEYCODE_RIGHT_ANGLE_BRACKET = 127
+  Request_Code_KEYCODE_EQUALS = 600,
+  Request_Code_KEYCODE_MINUS = 601,
+  Request_Code_KEYCODE_PLUS = 602,
+  Request_Code_KEYCODE_STAR = 603,
+  Request_Code_KEYCODE_SLASH = 604,
+  Request_Code_KEYCODE_BACKSLASH = 605,
+  Request_Code_KEYCODE_UNDERSCORE = 606,
+  Request_Code_KEYCODE_PIPE = 607,
+  Request_Code_KEYCODE_COMMA = 608,
+  Request_Code_KEYCODE_PERIODE = 609,
+  Request_Code_KEYCODE_COLON = 610,
+  Request_Code_KEYCODE_SEMICOLON = 611,
+  Request_Code_KEYCODE_AT = 612,
+  Request_Code_KEYCODE_APOSTROPHE = 613,
+  Request_Code_KEYCODE_LEFT_PAREN = 650,
+  Request_Code_KEYCODE_RIGHT_PARENT = 651,
+  Request_Code_KEYCODE_LEFT_BRACKET = 652,
+  Request_Code_KEYCODE_RIGHT_BRACKET = 653,
+  Request_Code_KEYCODE_LEFT_CURLY_BRACKET = 654,
+  Request_Code_KEYCODE_RIGHT_CURLY_BRACKET = 655,
+  Request_Code_KEYCODE_LEFT_ANGLE_BRACKET = 656,
+  Request_Code_KEYCODE_RIGHT_ANGLE_BRACKET = 657
 };
 bool Request_Code_IsValid(int value);
 const Request_Code Request_Code_Code_MIN = Request_Code_NONE;
@@ -315,17 +315,6 @@ class Request : public ::google::protobuf::Message {
   static const Code QUERY_CHILDREN = Request_Code_QUERY_CHILDREN;
   static const Code OPEN_SERVER_SIDE = Request_Code_OPEN_SERVER_SIDE;
   static const Code OPEN_CLIENT_SIDE = Request_Code_OPEN_CLIENT_SIDE;
-  static const Code KEYCODE_CTRL = Request_Code_KEYCODE_CTRL;
-  static const Code KEYCODE_SHIFT = Request_Code_KEYCODE_SHIFT;
-  static const Code KEYCODE_ALT_LEFT = Request_Code_KEYCODE_ALT_LEFT;
-  static const Code KEYCODE_ALT_RIGHT = Request_Code_KEYCODE_ALT_RIGHT;
-  static const Code KEYCODE_WINDOWS = Request_Code_KEYCODE_WINDOWS;
-  static const Code KEYCODE_ENTER = Request_Code_KEYCODE_ENTER;
-  static const Code KEYCODE_ESCAPE = Request_Code_KEYCODE_ESCAPE;
-  static const Code KEYCODE_DELETE = Request_Code_KEYCODE_DELETE;
-  static const Code KEYCODE_SPACE = Request_Code_KEYCODE_SPACE;
-  static const Code KEYCODE_BACKSPACE = Request_Code_KEYCODE_BACKSPACE;
-  static const Code KEYCODE_TAB = Request_Code_KEYCODE_TAB;
   static const Code KEYCODE_0 = Request_Code_KEYCODE_0;
   static const Code KEYCODE_1 = Request_Code_KEYCODE_1;
   static const Code KEYCODE_2 = Request_Code_KEYCODE_2;
@@ -374,6 +363,17 @@ class Request : public ::google::protobuf::Message {
   static const Code KEYCODE_F10 = Request_Code_KEYCODE_F10;
   static const Code KEYCODE_F11 = Request_Code_KEYCODE_F11;
   static const Code KEYCODE_F12 = Request_Code_KEYCODE_F12;
+  static const Code KEYCODE_CTRL = Request_Code_KEYCODE_CTRL;
+  static const Code KEYCODE_SHIFT = Request_Code_KEYCODE_SHIFT;
+  static const Code KEYCODE_ALT_LEFT = Request_Code_KEYCODE_ALT_LEFT;
+  static const Code KEYCODE_ALT_RIGHT = Request_Code_KEYCODE_ALT_RIGHT;
+  static const Code KEYCODE_WINDOWS = Request_Code_KEYCODE_WINDOWS;
+  static const Code KEYCODE_ENTER = Request_Code_KEYCODE_ENTER;
+  static const Code KEYCODE_ESCAPE = Request_Code_KEYCODE_ESCAPE;
+  static const Code KEYCODE_DELETE = Request_Code_KEYCODE_DELETE;
+  static const Code KEYCODE_SPACE = Request_Code_KEYCODE_SPACE;
+  static const Code KEYCODE_BACKSPACE = Request_Code_KEYCODE_BACKSPACE;
+  static const Code KEYCODE_TAB = Request_Code_KEYCODE_TAB;
   static const Code KEYCODE_EQUALS = Request_Code_KEYCODE_EQUALS;
   static const Code KEYCODE_MINUS = Request_Code_KEYCODE_MINUS;
   static const Code KEYCODE_PLUS = Request_Code_KEYCODE_PLUS;
@@ -433,17 +433,10 @@ class Request : public ::google::protobuf::Message {
   inline ::network_io::Request_Code code() const;
   inline void set_code(::network_io::Request_Code value);
 
-  // required .network_io.Request.Code extraCode = 3;
-  inline bool has_extracode() const;
-  inline void clear_extracode();
-  static const int kExtraCodeFieldNumber = 3;
-  inline ::network_io::Request_Code extracode() const;
-  inline void set_extracode(::network_io::Request_Code value);
-
-  // optional string securityToken = 4;
+  // optional string securityToken = 3;
   inline bool has_securitytoken() const;
   inline void clear_securitytoken();
-  static const int kSecurityTokenFieldNumber = 4;
+  static const int kSecurityTokenFieldNumber = 3;
   inline const ::std::string& securitytoken() const;
   inline void set_securitytoken(const ::std::string& value);
   inline void set_securitytoken(const char* value);
@@ -452,17 +445,17 @@ class Request : public ::google::protobuf::Message {
   inline ::std::string* release_securitytoken();
   inline void set_allocated_securitytoken(::std::string* securitytoken);
 
-  // optional int32 intExtra = 5;
+  // optional int32 intExtra = 4;
   inline bool has_intextra() const;
   inline void clear_intextra();
-  static const int kIntExtraFieldNumber = 5;
+  static const int kIntExtraFieldNumber = 4;
   inline ::google::protobuf::int32 intextra() const;
   inline void set_intextra(::google::protobuf::int32 value);
 
-  // optional string stringExtra = 6;
+  // optional string stringExtra = 5;
   inline bool has_stringextra() const;
   inline void clear_stringextra();
-  static const int kStringExtraFieldNumber = 6;
+  static const int kStringExtraFieldNumber = 5;
   inline const ::std::string& stringextra() const;
   inline void set_stringextra(const ::std::string& value);
   inline void set_stringextra(const char* value);
@@ -477,8 +470,6 @@ class Request : public ::google::protobuf::Message {
   inline void clear_has_type();
   inline void set_has_code();
   inline void clear_has_code();
-  inline void set_has_extracode();
-  inline void clear_has_extracode();
   inline void set_has_securitytoken();
   inline void clear_has_securitytoken();
   inline void set_has_intextra();
@@ -491,12 +482,11 @@ class Request : public ::google::protobuf::Message {
   int type_;
   int code_;
   ::std::string* securitytoken_;
-  int extracode_;
-  ::google::protobuf::int32 intextra_;
   ::std::string* stringextra_;
+  ::google::protobuf::int32 intextra_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
 
   friend void  protobuf_AddDesc_message_2eproto();
   friend void protobuf_AssignDesc_message_2eproto();
@@ -592,12 +582,12 @@ class FileInfo : public ::google::protobuf::Message {
   inline bool isdirectory() const;
   inline void set_isdirectory(bool value);
 
-  // required int32 size = 4;
+  // required uint32 size = 4;
   inline bool has_size() const;
   inline void clear_size();
   static const int kSizeFieldNumber = 4;
-  inline ::google::protobuf::int32 size() const;
-  inline void set_size(::google::protobuf::int32 value);
+  inline ::google::protobuf::uint32 size() const;
+  inline void set_size(::google::protobuf::uint32 value);
 
   // repeated .network_io.FileInfo child = 5;
   inline int child_size() const;
@@ -627,7 +617,7 @@ class FileInfo : public ::google::protobuf::Message {
   ::std::string* absolutefilepath_;
   ::std::string* filename_;
   bool isdirectory_;
-  ::google::protobuf::int32 size_;
+  ::google::protobuf::uint32 size_;
   ::google::protobuf::RepeatedPtrField< ::network_io::FileInfo > child_;
 
   mutable int _cached_size_;
@@ -856,38 +846,15 @@ inline void Request::set_code(::network_io::Request_Code value) {
   code_ = value;
 }
 
-// required .network_io.Request.Code extraCode = 3;
-inline bool Request::has_extracode() const {
+// optional string securityToken = 3;
+inline bool Request::has_securitytoken() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void Request::set_has_extracode() {
+inline void Request::set_has_securitytoken() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void Request::clear_has_extracode() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void Request::clear_extracode() {
-  extracode_ = 0;
-  clear_has_extracode();
-}
-inline ::network_io::Request_Code Request::extracode() const {
-  return static_cast< ::network_io::Request_Code >(extracode_);
-}
-inline void Request::set_extracode(::network_io::Request_Code value) {
-  assert(::network_io::Request_Code_IsValid(value));
-  set_has_extracode();
-  extracode_ = value;
-}
-
-// optional string securityToken = 4;
-inline bool Request::has_securitytoken() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void Request::set_has_securitytoken() {
-  _has_bits_[0] |= 0x00000008u;
-}
 inline void Request::clear_has_securitytoken() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void Request::clear_securitytoken() {
   if (securitytoken_ != &::google::protobuf::internal::kEmptyString) {
@@ -949,15 +916,15 @@ inline void Request::set_allocated_securitytoken(::std::string* securitytoken) {
   }
 }
 
-// optional int32 intExtra = 5;
+// optional int32 intExtra = 4;
 inline bool Request::has_intextra() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void Request::set_has_intextra() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void Request::clear_has_intextra() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void Request::clear_intextra() {
   intextra_ = 0;
@@ -971,15 +938,15 @@ inline void Request::set_intextra(::google::protobuf::int32 value) {
   intextra_ = value;
 }
 
-// optional string stringExtra = 6;
+// optional string stringExtra = 5;
 inline bool Request::has_stringextra() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void Request::set_has_stringextra() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void Request::clear_has_stringextra() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void Request::clear_stringextra() {
   if (stringextra_ != &::google::protobuf::internal::kEmptyString) {
@@ -1207,7 +1174,7 @@ inline void FileInfo::set_isdirectory(bool value) {
   isdirectory_ = value;
 }
 
-// required int32 size = 4;
+// required uint32 size = 4;
 inline bool FileInfo::has_size() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -1218,13 +1185,13 @@ inline void FileInfo::clear_has_size() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void FileInfo::clear_size() {
-  size_ = 0;
+  size_ = 0u;
   clear_has_size();
 }
-inline ::google::protobuf::int32 FileInfo::size() const {
+inline ::google::protobuf::uint32 FileInfo::size() const {
   return size_;
 }
-inline void FileInfo::set_size(::google::protobuf::int32 value) {
+inline void FileInfo::set_size(::google::protobuf::uint32 value) {
   set_has_size();
   size_ = value;
 }
