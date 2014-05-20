@@ -10,7 +10,7 @@ namespace network_io
 	{
 	public:
 		/// Handle a request and produce a reply.
-		virtual serialized_message handle_request(serialized_message request) = 0;
+		virtual serialized_message handle_request(serialized_message request) const = 0;
 	};
 
 }
