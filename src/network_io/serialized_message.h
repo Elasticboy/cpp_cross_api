@@ -1,6 +1,6 @@
 #pragma once
 
-#include "message.pb.h"
+#include "remote_command.pb.h"
 
 namespace network_io
 {

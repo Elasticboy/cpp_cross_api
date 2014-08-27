@@ -90,7 +90,7 @@
     <ClCompile Include="src\network_io\io_service_pool.cpp" />
     <ClCompile Include="src\exception\socket_exception.cpp" />
     <ClCompile Include="src\network_io.cpp" />
-    <ClCompile Include="src\network_io\message.pb.cc" />
+    <ClCompile Include="src\network_io\remote_command.pb.cc" />
     <ClCompile Include="src\network_io\serialized_message.cpp" />
     <ClCompile Include="src\network_io\server_config.cpp" />
     <ClCompile Include="src\windows\helpers\com_helper.cpp" />
@@ -105,7 +105,7 @@
     <ClCompile Include="src\voice.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\network_io\message.pb.h" />
+    <ClInclude Include="src\network_io\remote_command.pb.h" />
     <ClInclude Include="src\network_io\request_handler.h" />
     <ClInclude Include="src\network_io\io_service_pool.h" />
     <ClInclude Include="src\exception\socket_exception.h" />
