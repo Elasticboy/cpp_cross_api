@@ -1,8 +1,30 @@
-Debug
-Release
-include
-lib
-ipch
+# Editor backups
+*~
+
+# Hidden files
+.*
+*/.*
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+.DS_STORE
+
+# Compiled source #
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.obj
+*.pyc
+*.dir
+
+# Intellij project files
+.idea/
+
+# VS project files
 *.suo
 *.sdf
 *.opensdf
@@ -12,3 +34,16 @@ ipch
 *.layout
 .directory
 .objs
+/Debug
+/Release
+/include
+/lib
+/ipch
+
+# Biicode
+/bii/
+/cmake/
+/build/
+/bin/
+/deps/
+/blocks/

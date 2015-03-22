@@ -1,12 +1,13 @@
 #include "platform_config.h"
+
 #if defined(WINDOWS_PLATFORM)
 
 #include "../text_to_speech.h"
 
 #include <iostream>
-#include <Windows.h>
+#include <windows.h>
 #include "Utils.h"
-#include "lexicon_manager.h"
+#include "lang/lexicon_manager.h"
 #include "string_utils.h"
 #include "helpers/com_helper.h"
 #include "exception/config_exception.h"

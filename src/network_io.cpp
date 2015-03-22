@@ -2,7 +2,7 @@
 
 #include "platform_config.h"
 # if defined(WINDOWS_PLATFORM)
-#   include <WinSock2.h>
+#   include <winsock2.h>
 # endif
 
 #include <boost/asio/ip/host_name.hpp>
