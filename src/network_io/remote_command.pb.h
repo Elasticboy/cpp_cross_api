@@ -580,14 +580,17 @@ class FileInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 size() const;
   inline void set_size(::google::protobuf::uint32 value);
 
-  // optional .network_io.FileInfo child = 5;
-  inline bool has_child() const;
+  // repeated .network_io.FileInfo child = 5;
+  inline int child_size() const;
   inline void clear_child();
   static const int kChildFieldNumber = 5;
-  inline const ::network_io::FileInfo& child() const;
-  inline ::network_io::FileInfo* mutable_child();
-  inline ::network_io::FileInfo* release_child();
-  inline void set_allocated_child(::network_io::FileInfo* child);
+  inline const ::network_io::FileInfo& child(int index) const;
+  inline ::network_io::FileInfo* mutable_child(int index);
+  inline ::network_io::FileInfo* add_child();
+  inline const ::google::protobuf::RepeatedPtrField< ::network_io::FileInfo >&
+      child() const;
+  inline ::google::protobuf::RepeatedPtrField< ::network_io::FileInfo >*
+      mutable_child();
 
   // @@protoc_insertion_point(class_scope:network_io.FileInfo)
  private:
@@ -598,7 +601,7 @@ class FileInfo : public ::google::protobuf::Message {
   ::google::protobuf::internal::ArenaStringPtr filename_;
   bool isdirectory_;
   ::google::protobuf::uint32 size_;
-  ::network_io::FileInfo* child_;
+  ::google::protobuf::RepeatedPtrField< ::network_io::FileInfo > child_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_remote_5fcommand_2eproto();
   friend void protobuf_AssignDesc_remote_5fcommand_2eproto();
@@ -1005,41 +1008,34 @@ inline void FileInfo::set_size(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:network_io.FileInfo.size)
 }
 
-// optional .network_io.FileInfo child = 5;
-inline bool FileInfo::has_child() const {
-  return !_is_default_instance_ && child_ != NULL;
+// repeated .network_io.FileInfo child = 5;
+inline int FileInfo::child_size() const {
+  return child_.size();
 }
 inline void FileInfo::clear_child() {
-  if (child_ != NULL) delete child_;
-  child_ = NULL;
+  child_.Clear();
 }
-inline const ::network_io::FileInfo& FileInfo::child() const {
+inline const ::network_io::FileInfo& FileInfo::child(int index) const {
   // @@protoc_insertion_point(field_get:network_io.FileInfo.child)
-  return child_ != NULL ? *child_ : *default_instance_->child_;
+  return child_.Get(index);
 }
-inline ::network_io::FileInfo* FileInfo::mutable_child() {
-  
-  if (child_ == NULL) {
-    child_ = new ::network_io::FileInfo;
-  }
+inline ::network_io::FileInfo* FileInfo::mutable_child(int index) {
   // @@protoc_insertion_point(field_mutable:network_io.FileInfo.child)
+  return child_.Mutable(index);
+}
+inline ::network_io::FileInfo* FileInfo::add_child() {
+  // @@protoc_insertion_point(field_add:network_io.FileInfo.child)
+  return child_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::network_io::FileInfo >&
+FileInfo::child() const {
+  // @@protoc_insertion_point(field_list:network_io.FileInfo.child)
   return child_;
 }
-inline ::network_io::FileInfo* FileInfo::release_child() {
-  
-  ::network_io::FileInfo* temp = child_;
-  child_ = NULL;
-  return temp;
-}
-inline void FileInfo::set_allocated_child(::network_io::FileInfo* child) {
-  delete child_;
-  child_ = child;
-  if (child) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_set_allocated:network_io.FileInfo.child)
+inline ::google::protobuf::RepeatedPtrField< ::network_io::FileInfo >*
+FileInfo::mutable_child() {
+  // @@protoc_insertion_point(field_mutable_list:network_io.FileInfo.child)
+  return &child_;
 }
 
 // -------------------------------------------------------------------

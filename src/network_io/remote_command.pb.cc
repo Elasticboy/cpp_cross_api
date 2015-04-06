@@ -198,7 +198,7 @@ void protobuf_AddDesc_remote_5fcommand_2eproto() {
     "ANGLE_BRACKET\020\220\005\022 \n\033KEYCODE_RIGHT_ANGLE_"
     "BRACKET\020\221\005\"~\n\010FileInfo\022\030\n\020absoluteFilePa"
     "th\030\001 \001(\t\022\020\n\010filename\030\002 \001(\t\022\023\n\013isDirector"
-    "y\030\003 \001(\010\022\014\n\004size\030\004 \001(\r\022#\n\005child\030\005 \001(\0132\024.n"
+    "y\030\003 \001(\010\022\014\n\004size\030\004 \001(\r\022#\n\005child\030\005 \003(\0132\024.n"
     "etwork_io.FileInfo\"\220\002\n\010Response\022-\n\013reque"
     "stType\030\001 \001(\0162\030.network_io.Request.Type\022-"
     "\n\013requestCode\030\002 \001(\0162\030.network_io.Request"
@@ -206,8 +206,8 @@ void protobuf_AddDesc_remote_5fcommand_2eproto() {
     "esponse.ReturnCode\022\017\n\007message\030\004 \001(\t\022\020\n\010i"
     "ntValue\030\005 \001(\005\022\"\n\004file\030\006 \001(\0132\024.network_io"
     ".FileInfo\"*\n\nReturnCode\022\016\n\nRC_SUCCESS\020\000\022"
-    "\014\n\010RC_ERROR\020\001B0\n\037org.es.uremote.request."
-    "protobufB\rRemoteCommandb\006proto3", 2671);
+    "\014\n\010RC_ERROR\020\001B9\n(com.cyrilleroux.uremote"
+    ".request.protobufB\rRemoteCommandb\006proto3", 2680);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "remote_command.proto", &protobuf_RegisterTypes);
   Request::default_instance_ = new Request();
@@ -928,7 +928,6 @@ FileInfo::FileInfo()
 
 void FileInfo::InitAsDefaultInstance() {
   _is_default_instance_ = true;
-  child_ = const_cast< ::network_io::FileInfo*>(&::network_io::FileInfo::default_instance());
 }
 
 FileInfo::FileInfo(const FileInfo& from)
@@ -947,7 +946,6 @@ void FileInfo::SharedCtor() {
   filename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   isdirectory_ = false;
   size_ = 0u;
-  child_ = NULL;
 }
 
 FileInfo::~FileInfo() {
@@ -959,7 +957,6 @@ void FileInfo::SharedDtor() {
   absolutefilepath_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   filename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
-    delete child_;
   }
 }
 
@@ -1002,12 +999,11 @@ void FileInfo::Clear() {
   ZR_(isdirectory_, size_);
   absolutefilepath_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (child_ != NULL) delete child_;
-  child_ = NULL;
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
+  child_.Clear();
 }
 
 bool FileInfo::MergePartialFromCodedStream(
@@ -1083,15 +1079,16 @@ bool FileInfo::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .network_io.FileInfo child = 5;
+      // repeated .network_io.FileInfo child = 5;
       case 5: {
         if (tag == 42) {
          parse_child:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_child()));
+                input, add_child()));
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(42)) goto parse_child;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1150,10 +1147,10 @@ void FileInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->size(), output);
   }
 
-  // optional .network_io.FileInfo child = 5;
-  if (this->has_child()) {
+  // repeated .network_io.FileInfo child = 5;
+  for (unsigned int i = 0, n = this->child_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, *this->child_, output);
+      5, this->child(i), output);
   }
 
   // @@protoc_insertion_point(serialize_end:network_io.FileInfo)
@@ -1194,11 +1191,11 @@ void FileInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->size(), target);
   }
 
-  // optional .network_io.FileInfo child = 5;
-  if (this->has_child()) {
+  // repeated .network_io.FileInfo child = 5;
+  for (unsigned int i = 0, n = this->child_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        5, *this->child_, target);
+        5, this->child(i), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:network_io.FileInfo)
@@ -1234,11 +1231,12 @@ int FileInfo::ByteSize() const {
         this->size());
   }
 
-  // optional .network_io.FileInfo child = 5;
-  if (this->has_child()) {
-    total_size += 1 +
+  // repeated .network_io.FileInfo child = 5;
+  total_size += 1 * this->child_size();
+  for (int i = 0; i < this->child_size(); i++) {
+    total_size +=
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->child_);
+        this->child(i));
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -1261,6 +1259,7 @@ void FileInfo::MergeFrom(const ::google::protobuf::Message& from) {
 
 void FileInfo::MergeFrom(const FileInfo& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  child_.MergeFrom(from.child_);
   if (from.absolutefilepath().size() > 0) {
 
     absolutefilepath_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.absolutefilepath_);
@@ -1274,9 +1273,6 @@ void FileInfo::MergeFrom(const FileInfo& from) {
   }
   if (from.size() != 0) {
     set_size(from.size());
-  }
-  if (from.has_child()) {
-    mutable_child()->::network_io::FileInfo::MergeFrom(from.child());
   }
 }
 
@@ -1306,7 +1302,7 @@ void FileInfo::InternalSwap(FileInfo* other) {
   filename_.Swap(&other->filename_);
   std::swap(isdirectory_, other->isdirectory_);
   std::swap(size_, other->size_);
-  std::swap(child_, other->child_);
+  child_.UnsafeArenaSwap(&other->child_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
