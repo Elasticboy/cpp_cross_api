@@ -1,12 +1,5 @@
 #pragma once
 
-#include "platform_config.h"
-# if defined(WINDOWS_PLATFORM)
-#	include "windows/text_to_speech_windows.h"
-# else
-#	include "unix/text_to_speech_unix.h"
-# endif
-
 #include "voice.h"
 
 #include <string>
