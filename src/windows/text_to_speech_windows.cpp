@@ -104,11 +104,6 @@ namespace text_to_speech
         return std::vector<std::string>();
     }
 
-    /**
-    * Try to initialize a voice object to check if the properties are OK.
-    * @return True if parameters are correct, false othewise.
-    * @throws and Exception if a problem occurs.
-    */
     bool test_parameters(const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
         // Init COM lib
@@ -128,6 +123,7 @@ namespace text_to_speech
 
         return false;
     }
+
     bool say(const std::string& textToSpeak, const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
         // Init COM lib

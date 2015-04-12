@@ -1,7 +1,7 @@
 #include "platform_config.h"
 #if defined(UNIX_PLATFORM)
 
-#include "../text_to_speech.h"
+#include "text_to_speech.h"
 
 #include <vector>
 
@@ -14,13 +14,13 @@ namespace text_to_speech
         return std::vector<std::string>();
     }
 
-    bool testParameters(const std::string& language, const std::string& gender)
+    bool test_parameters(const language_code& language, const std::string& gender, const tts_age& age, const long& rate)
     {
         // TODO: Implement text_to_speech::testParameters() for Linux
         return false;
     }
 
-    bool say(const std::string& textToSpeak, const std::string& language, const std::string& gender)
+    bool say(const std::string &textToSpeak, const language_code &language, const std::string &gender, const tts_age &age, const long &rate)
     {
         // TODO: Implement text_to_speech::say() for Linux
         return false;
