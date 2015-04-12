@@ -1,7 +1,7 @@
 #include "platform_config.h"
 #if defined(UNIX_PLATFORM)
 
-#include "text_to_speech.h"
+#include "../text_to_speech.h"
 
 #include <vector>
 
