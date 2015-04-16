@@ -1,4 +1,5 @@
 #include "platform_config.h"
+
 #if defined(UNIX_PLATFORM)
 
 #include "../text_to_speech.h"
@@ -7,6 +8,8 @@
 
 namespace text_to_speech
 {
+
+    bool is_implemented() { return false; }
 
     std::vector<std::string> available_languages()
     {

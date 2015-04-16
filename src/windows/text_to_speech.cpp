@@ -1,4 +1,5 @@
 #include "platform_config.h"
+
 #if defined(WINDOWS_PLATFORM)
 
 #include "text_to_speech.h"
@@ -97,6 +98,7 @@ namespace text_to_speech
         ispVoice->SetRate(rate);
     }
 
+    bool is_implemented() { return true; }
 
     std::vector<std::string> available_languages()
     {
