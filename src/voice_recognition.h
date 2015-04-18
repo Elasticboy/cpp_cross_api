@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 namespace voice_recognition
 {
     /** @return True if voice recognition is implemented for the current platform. */

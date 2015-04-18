@@ -3,9 +3,9 @@
 #if defined(WINDOWS_PLATFORM)
 
 #include "../voice_recognition.h"
+#include <sapi.h>
 
 #include <memory>
-#include <sapi.h>
 #include "Utils.h"
 #include "helpers/com_helper.h"
 
