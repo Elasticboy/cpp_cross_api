@@ -8,7 +8,6 @@
 
 namespace text_to_speech
 {
-
     bool is_implemented() { return false; }
 
     std::vector<std::string> available_languages()
@@ -28,7 +27,6 @@ namespace text_to_speech
         // TODO: Implement text_to_speech::say() for Linux
         return false;
     }
-
 }
 
 #endif
