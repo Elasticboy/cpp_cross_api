@@ -1,16 +1,18 @@
-#include "platform_config.h"
+#include "core/platform_config.h"
 
 #if defined(WINDOWS_PLATFORM)
 
 #include "../voice_recognition.h"
-#include <sapi.h>
 
 #include <memory>
-#include "Utils.h"
+#include <sapi.h>
+
+#include "logger/console_logger.h"
 #include "helpers/com_helper.h"
 
 const ULONGLONG grammarId = 0;
 const wchar_t* ruleName1 = L"ruleName1";
+auto log = ConsoleLogger(DEBUG);
 
 namespace voice_recognition
 {
@@ -45,8 +47,8 @@ namespace voice_recognition
 		hr = recognizer->CreateRecoContext(&recoContext);
 		com_helper::check_result("VoiceListener::listen", hr);
 
-		Utils::get_logger()->info("VoiceListener::listen, You should start Windows Recognition.");
-		Utils::get_logger()->info("VoiceListener::listen, Start talking !");
+		log.Info("VoiceListener::listen, You should start Windows Recognition.");
+		log.Info("VoiceListener::listen, Start talking !");
 
 		// Disable context
 		hr = recoContext->Pause(0);
@@ -89,7 +91,7 @@ namespace voice_recognition
 
 		//TODO: implement callback
 		//m_ai->say(lexicon_manager::getString(trad_key::AI_YES));
-		Utils::get_logger()->info("AI_YES");
+		log.Info("AI_YES");
 	}
 
 	/**

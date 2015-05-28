@@ -5,5 +5,5 @@
 class tts_exception : public Exception
 {
 public:
-	tts_exception(const std::string& source, const std::string& message) throw();
+    tts_exception(const std::string& source, const std::string& message) throw();
 };

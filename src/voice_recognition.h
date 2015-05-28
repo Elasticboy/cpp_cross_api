@@ -11,9 +11,11 @@ namespace voice_recognition
     {
     public:
         recognizer();
+
         ~recognizer();
 
         void add_vocal_command();
+
         void start_listening(const std::string& keyword);
 
     private:

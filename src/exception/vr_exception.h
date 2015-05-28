@@ -5,5 +5,5 @@
 class vr_exception : public Exception
 {
 public:
-	vr_exception(const std::string& source, const std::string& message) throw();
+    vr_exception(const std::string& source, const std::string& message) throw();
 };

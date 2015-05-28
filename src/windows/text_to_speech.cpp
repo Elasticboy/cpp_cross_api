@@ -1,8 +1,8 @@
-#include "platform_config.h"
+#include "core/platform_config.h"
 
 #if defined(WINDOWS_PLATFORM)
 
-#include "text_to_speech.h"
+#include "../text_to_speech.h"
 
 #include <iostream>
 #include <vector>
@@ -12,11 +12,13 @@
 #include <comdef.h>
 #include <sphelper.h>
 
-#include "Utils.h"
+#include "logger/console_logger.h"
 #include "lang/lexicon_manager.h"
 #include "string_utils.h"
 #include "helpers/com_helper.h"
 #include "exception/config_exception.h"
+
+auto log = ConsoleLogger(DEBUG);
 
 namespace text_to_speech
 {
@@ -149,16 +151,16 @@ namespace text_to_speech
                 result = true;
 
             } else if (hr == E_INVALIDARG) {
-                Utils::get_logger()->error("Speech::SayB - One or more parameters are invalid.");
+                log.Error("Speech::SayB - One or more parameters are invalid.");
 
             } else if (hr == E_POINTER) {
-                Utils::get_logger()->error("Speech::SayB - Invalid pointer.");
+                log.Error("Speech::SayB - Invalid pointer.");
 
             } else if (hr == E_OUTOFMEMORY) {
-                Utils::get_logger()->error("Speech::SayB - Exceeded available memory.");
+                log.Error("Speech::SayB - Exceeded available memory.");
 
             } else {
-                Utils::get_logger()->error("Speech::SayB - Unknown error.");
+                log.Error("Speech::SayB - Unknown error.");
             }
 
             hr = ispVoice->WaitUntilDone(INFINITE);

@@ -1,4 +1,4 @@
-#include "platform_config.h"
+#include "core/platform_config.h"
 
 #if defined(UNIX_PLATFORM)
 
