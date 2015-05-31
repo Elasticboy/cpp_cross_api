@@ -13,6 +13,7 @@ namespace network_io
 
 		unsigned short port() const;
 		int pool_size() const;
+		int root() const;
 
 	private:
 		static const std::string KEY_PORT;
@@ -23,5 +24,6 @@ namespace network_io
 
 		unsigned short port_;
 		int pool_size_;
+		std::string root_;
 	};
 }
