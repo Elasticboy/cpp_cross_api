@@ -18,6 +18,7 @@ namespace network_io
 	private:
 		static const std::string KEY_PORT;
 		static const std::string KEY_POOL_SIZE;
+		static const std::string KEY_FILE_MANAGER_ROOT;
 
 		static const unsigned short DEFAULT_PORT;
 		static const int DEFAULT_POOL_SIZE;

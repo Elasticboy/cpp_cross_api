@@ -1,3 +1,5 @@
+#include "server_config.h"
+
 namespace network_io
 {
     const std::string server_config::KEY_PORT = "port";
@@ -26,5 +28,5 @@ namespace network_io
 
     int server_config::pool_size() const { return pool_size_; }
 
-    std::string root() const { return root_; }
+    std::string server_config::root() const { return root_; }
 }
