@@ -13,7 +13,7 @@ namespace network_io
 
 		unsigned short port() const;
 		int pool_size() const;
-		int root() const;
+		std::string root() const;
 
 	private:
 		static const std::string KEY_PORT;
